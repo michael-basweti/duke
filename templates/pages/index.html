@@ -43,23 +43,23 @@
     <div class="row">
       {% for album in albums %}
       <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card listing-preview border-0">
+        <div class="card shadow-lg listing-preview border-0">
           <img class="img" src="{{ album.album_photo.url }}" alt="">
             <div class="jumbotron bg-transparent">
               <h4 class="text-center text-white">{{ album.album_name}}</h4>  
-              <a href="" class="btn btn-block btn-primary-outline">Read More </a>
+              <a href="" class="btn btn-block btn-primary-outline">View Photos </a>
             </div>
         </div>
       </div>
       {% endfor %}
     </div>
   </div>
-  <hr>
       <div class="form-row text-center">
           <div class="col-12">
               <a href="" class="btn btn-primary text-center">More Events</a>
           </div>  
       </div>
+      <hr>
 </section>
 <section id="services" class="py-5 bg-secondary text-white">
     <div class="container">
@@ -95,5 +95,41 @@
       </div>
     </div>
   </section>
-
+  <section id="listings" class="py-5">
+      <div class="container">
+        <h3 class="text-center mb-3">Latest Blogs</h3>
+        <div class="row">
+          {% for blog in blogs %}
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card listing-preview border-0">
+              <img class="img" src="{{ blog.blog_photo.url }}" alt="">
+                <div class="jumbotron bg-transparent">
+                  <h4 class="text-center text-white">{{ blog.title}}</h4>  
+                  <a href="{% url 'blog' blog.id%}" class="btn btn-block btn-primary-outline">Read More </a>
+                </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+          <div class="form-row text-center">
+              <div class="col-12">
+                  <a href="" class="btn btn-primary text-center">More Blogs</a>
+              </div>  
+          </div>
+          <hr>
+    </section>
+    <section id="services" class="py-5 bg-secondary text-white">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-12">
+                <h2 class="text-center">Happy Clients</h2>
+            </div>     
+          </div>
+          <br>
+          <div class="row text-center">
+            <div class="card">hellp</div>
+          </div>
+        </div>
+      </section>
 {%endblock%}

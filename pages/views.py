@@ -2,13 +2,16 @@ from django.shortcuts import render
 from Testimonials.models import Testimonial
 from EventAlbum.models import Album
 from team.models import Team
+from Blog.models import Blog
 
 def index(request):
     testimonials = Testimonial.objects.order_by('-date')
     albums = Album.objects.order_by('-date_added')[:6]
+    blogs = Blog.objects.order_by('-date_added')[:3]
     context = {
         'testimonials': testimonials,
         'albums': albums,
+        "blogs":blogs,
     }
     return render(request, 'pages/index.html', context)
 

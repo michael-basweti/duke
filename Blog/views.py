@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Blog
 
 def blog(request):
@@ -6,4 +6,11 @@ def blog(request):
     context = {
         "blogs":blogs
     }
-    return render(request, 'pages/blog.hml', context)
+    return render(request, 'pages/blog.html', context)
+
+def blog_detail(request,blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    context = {
+        "blog":blog
+    }
+    return render(request, 'pages/blog_detail.html', context)
