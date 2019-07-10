@@ -22,4 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),
     path('albums', include('EventAlbum.urls')),
+    path('ckeditor', include('ckeditor_uploader.urls')),
+    path('hire_corporate', include('HireCorporateSocial.urls')),
+    path('hire_equipments', include('HireApplications.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

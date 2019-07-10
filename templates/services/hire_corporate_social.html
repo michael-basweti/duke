@@ -1,0 +1,160 @@
+{% extends 'base.html'%}
+{%load static%}
+
+{%block content%}
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="display-4">Our Services</h1>
+                <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'index'%}">
+                        <i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="breadcrumb-item active"> Services</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+{% include 'partials/_alerts.html' %}
+<!-- Listing -->
+<section id="application" class="py-4">
+    <div class="container">
+        <!-- <img class="img" src="{% static 'img/catering2.jpg' %}" alt=""> -->
+        <div class="row">
+
+            <div class="col-md-6">
+                <h4 class="text-center">Corporate and Social services</h4>
+                <div class="card p-3 text-center">
+                    <img class="img" src="{% static 'img/corporate.jpg' %}" alt="">
+                    <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                         of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                          but also the leap into electronic typesetting, remaining essentially unchanged. 
+                          It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                          and more recently with desktop publishing software like Aldus PageMaker including versions of 
+                          Lorem Ipsum.</p>
+                    <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#corporate">Hire Service</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+                <h4 class="text-center">Hire equipments</h4>
+                <div class="card p-3 text-center">
+                    <img class="img" src="{% static 'img/catering.jpg' %}" alt="">
+                    <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
+                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                             of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                              but also the leap into electronic typesetting, remaining essentially unchanged. 
+                              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                              and more recently with desktop publishing software like Aldus PageMaker including versions of 
+                              Lorem Ipsum.</p>
+                    <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#equipment">Hire Equipments</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hire corporate -->
+<div class="modal fade" id="corporate" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="inquiryModalLabel">apply for corporate/social service</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'hire' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-form-label">Email:</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="col-form-label">Phone:</label>
+                        <input type="text" name="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                            <label for="service" class="col-form-label">Service:</label><br>
+                            <select name="service">
+                                    <optgroup label="Service">
+                                      <option value="corporate">Corporate</option>
+                                      <option value="social">Social</option>
+                                    </optgroup>
+                                  </select>
+                        </div>
+                    <div class="form-group">
+                        <label for="message" class="col-form-label">Message:</label>
+                        <textarea name="message" class="form-control"></textarea>
+                    </div>
+                    <hr>
+                    <input type="submit" value="Send" class="btn btn-block btn-secondary">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- hire equipments -->
+<div class="modal fade" id="equipment" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="inquiryModalLabel">Hire Equipments</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'hire_equipment' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-form-label">Email:</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="col-form-label">Phone:</label>
+                        <input type="text" name="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="service" class="col-form-label">Equipment to be hired:</label><br>
+                        <select name="service">
+                                <optgroup label="Equipments">
+                                  <option value="tents">Tents</option>
+                                  <option value="catering">Catering</option>
+                                  <option value="electronics">Electronics</option>
+                                </optgroup>
+                              </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="col-form-label">Message:</label>
+                        <textarea name="message" class="form-control"></textarea>
+                    </div>
+                    <hr>
+                    <input type="submit" value="Send" class="btn btn-block btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

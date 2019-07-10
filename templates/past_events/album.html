@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+{%load humanize%}
 
 {%block content%}
 <section id="showcase-inner" class="py-5 text-white">
@@ -7,6 +8,16 @@
             <div class="col-md-12">
                 <h1 class="display-4">{{album.album_name}}</h1>
                 <p class="lead">{{album.description}}</p>
+                <div class="row">
+                    <div class="col-sm-5 col-md-5 col-lg-5">
+                    </div>
+                <div class="col-sm-7 col-md-7 col-lg-7 text-right">
+                    <cite title="Source Title">
+                      <small>added <i>{{album.date_added | timesince}} ago.</small>
+                    </cite>
+                  </div>
+                </div>
+                <!-- <p><small>added <i>{{album.date_added | timesince}} ago.</i></small></p> -->
             </div>
         </div>
     </div>
@@ -35,7 +46,7 @@
                 {% for photo in photos %}
                 <div class="col-md-6 col-lg-3 mb-4">
                   <div class="card border-0">
-                        <a href="{{photo.photo.url}}" data-lightbox="home-images">
+                        <a href="{{photo.photo.url}}" data-lightbox="home-images" data-title="{{photo.description}}">
                     <img class="img" src="{{ photo.photo.url }}" alt=""></a>
                       <!-- <div class="jumbotron bg-transparent">
                         <h4 class="text-center text-white">{{ album.album_name}}</h4>  

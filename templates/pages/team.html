@@ -27,16 +27,16 @@
 </section>
 <section id="team" class="py-5">
     <div class="container">
-        <div class="row text-center">
+        <div class="row text-center ">
             {% if team_members %}
             {% for team in team_members%}
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card h-100 text-center">
                     <img class="img" src="{{ team.photo.url }}" alt="">
                     <h4>{{ team.name }}</h4>
                     <p>
                         {{ team.role }}</p>
-                    <p class="text-justify">
+                    <p class="p-3 text-justify">
                         {{ team.description }}</p>
                 </div>
             </div>

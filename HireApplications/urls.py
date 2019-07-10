@@ -1,0 +1,7 @@
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.hire, name='hire_equipment'),
+]

@@ -30,3 +30,6 @@ def team(request):
         "team_members":team
     }
     return render(request, 'pages/team.html', context)
+
+def services(request):
+    return render(request,'services/hire_corporate_social.html')
