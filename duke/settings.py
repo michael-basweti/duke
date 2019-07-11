@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'HireApplications',
     'Testimonials',
     'Blog',
+    'clients',
 ]
 
 MIDDLEWARE = [

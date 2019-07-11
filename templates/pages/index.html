@@ -128,7 +128,16 @@
           </div>
           <br>
           <div class="row text-center">
-            <div class="card">hellp</div>
+            <div class="card col-md-12 happy_clients">
+              <div class="row">
+                  {%for client in clients%}
+                  <div class="col-md-2">
+                    <img src="{{client.logo.url}}" alt="">
+                  </div>
+                  {%endfor%}
+              </div>
+                
+            </div>
           </div>
         </div>
       </section>

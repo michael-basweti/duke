@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 from EventAlbum.models import Album
 
 from datetime import datetime
@@ -11,3 +12,7 @@ class Gallery(models.Model):
 
     def __str__(self):
         return self.description
+
+    class Meta:
+        verbose_name = _("Gallery Photo")
+        verbose_name_plural = _("Gallery Photos")

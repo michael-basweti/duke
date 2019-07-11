@@ -18,6 +18,10 @@ img {
   /* height: auto;
   vertical-align: middle; */
 }
+.happy_clients img{
+  height: 110px;
+  width: 120px;
+}
 #gallery .img {
   height: 270px;
   width: 270px;

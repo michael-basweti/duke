@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
 from datetime import datetime
@@ -13,3 +14,6 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = _("Company Blog")
+        verbose_name_plural = _("Blogs")
