@@ -30,3 +30,6 @@ def team(request):
 
 def services(request):
     return render(request,'services/hire_corporate_social.html')
+
+def contact(request):
+    return render(request, 'pages/contact.html')

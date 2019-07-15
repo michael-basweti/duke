@@ -1,0 +1,130 @@
+{% extends 'base.html'%}
+{%load static%}
+
+{%block content%}
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="display-4">Contact Us</h1>
+                <!-- <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p> -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'index'%}">
+                        <i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="breadcrumb-item active"> Contact Us</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+{% include 'partials/_alerts.html' %}
+<!-- Listing -->
+<!-- Section: Contact v.1 -->
+<section class="my-5">
+    <div class="container">
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-lg-5 mb-lg-0 mb-4">
+
+                <!-- Form with header -->
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Body -->
+                        <form action="{% url 'contact_us'%}" method="POST">
+                                {% csrf_token %}
+                        <div class="md-form">
+                            <i class="fas fa-user prefix grey-text"></i>
+                            <input type="text" name="form-name" placeholder="Your name" class="form-control" required>
+                           
+                        </div>
+                        <div class="md-form">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            <input type="email" name="form-email" placeholder="Your email" class="form-control" required>
+                        
+                        </div>
+                        <div class="md-form">
+                            <i class="fas fa-phone prefix grey-text"></i>
+                            <input type="tel" name="form-phone" placeholder="Phone no." class="form-control" required>
+                            
+                        </div>
+                        <div class="md-form">
+                            <i class="fas fa-pencil-alt prefix grey-text"></i>
+                            <textarea name="form-text" placeholder="message" class="form-control md-textarea" rows="3" required></textarea>
+                            
+                        </div>
+                        <div class="text-center">
+                            <button class="btn" type="submit"  style="color: #fff; background-color:#008080;">Submit</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                <!-- Form with header -->
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-lg-7">
+
+                <!--Google map-->
+                <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 400px">
+                    <div class="gmap_canvas"><iframe height="400" width="650" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=duke%20events&t=k&z=13&ie=UTF8&iwloc=&output=embed"
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                            href="https://www.maps-erstellen.de"></a></div>
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                        }
+
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+                        }
+                    </style>
+                </div>
+                <!-- Buttons-->
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <a class="btn-floating accent-1">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                        <p>Nairobi, Westands Square</p>
+                        <p class="mb-md-0">Kenya</p>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn-floating accent-1">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        <p>+254 703 715684</p>
+                        <p class="mb-md-0">Mon - Sat, 8:00-22:00</p>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn-floating accent-1">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <p>info@gmail.com</p>
+                        <p class="mb-0">sale@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+    </div>
+    {% endblock %}

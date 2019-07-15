@@ -43,11 +43,11 @@
     <div class="row">
       {% for album in albums %}
       <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-lg listing-preview border-0">
+        <div class="card listing-preview">
           <img class="img" src="{{ album.album_photo.url }}" alt="">
             <div class="jumbotron bg-transparent">
               <h4 class="text-center text-white">{{ album.album_name}}</h4>  
-              <a href="" class="btn btn-block btn-primary-outline">View Photos </a>
+              <a href="{% url 'album' album.id%}" class="btn btn-block btn-primary-outline">View Photos </a>
             </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
   </div>
       <div class="form-row text-center">
           <div class="col-12">
-              <a href="" class="btn btn-primary text-center">More Events</a>
+              <a href="" class="btn text-center" style="color: #fff; background-color:#008080;" >More Events</a>
           </div>  
       </div>
       <hr>
@@ -101,7 +101,7 @@
         <div class="row">
           {% for blog in blogs %}
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card listing-preview border-0">
+            <div class="card listing-preview">
               <img class="img" src="{{ blog.blog_photo.url }}" alt="">
                 <div class="jumbotron bg-transparent">
                   <h4 class="text-center text-white">{{ blog.title}}</h4>  
@@ -114,11 +114,18 @@
       </div>
           <div class="form-row text-center">
               <div class="col-12">
-                  <a href="" class="btn btn-primary text-center">More Blogs</a>
+                  <a href="" class="btn text-center" style="color: #fff; background-color:#008080;">More Blogs</a>
               </div>  
           </div>
           <hr>
     </section>
+    <section>
+      <div class="container">
+<!-- <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/e7bd988077a9560eb40fe7576a031301.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe> -->
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-aef22bda-5700-4768-a7be-190a37b7e4c1"></div>
+      </div>
+      </section>
     <section id="services" class="py-5 bg-secondary text-white">
         <div class="container">
           <div class="row text-center">
@@ -141,4 +148,5 @@
           </div>
         </div>
       </section>
+      
 {%endblock%}

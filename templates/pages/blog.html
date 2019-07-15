@@ -32,7 +32,7 @@
                     {% if blogs %}
                     {% for blog in blogs%}
                     <div class="col-md-4 mb-4">
-                        <div class="card card-reveal h-100 text-center border-0 bg-light">
+                        <div class="card card-reveal h-100 text-center">
                             <a href="{% url 'blog' blog.id%}">
                             <img class="img" src="{{ blog.blog_photo.url }}" alt="">
                         </a>

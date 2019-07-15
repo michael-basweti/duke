@@ -1,0 +1,10 @@
+{% block html %}
+<div class="card p-3 text-center">
+    <h2 class="text-success">Duke Events Notification</h2>
+    <p>Hi admin, {{full_name}} has applied for {{service}}. His contacts are as follows:</p>
+    <ul>
+      <li>Phone: {{phone}}</li>
+      <li>Email: {{email}}</li>
+    </ul>
+</div>
+{% endblock %}

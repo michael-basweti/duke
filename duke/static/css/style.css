@@ -6,7 +6,11 @@
     height: 0;
     padding: 0;
 }
-
+/* .card{
+  -moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+} */
 .card-reveal {
   transition: transform .2s;
 }
@@ -30,7 +34,7 @@ img {
 }
 #application .img {
   height: 350px;
-  width: 450px;
+  width: 100%;
   background: transparent;
   display: block;
   margin-left: auto;
@@ -253,4 +257,18 @@ img .img {
   .testimonials h2 {
     font-size: 1.5rem;
   }
+}
+
+.mapouter {
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+}
+.mapouter iframe {
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
 }
