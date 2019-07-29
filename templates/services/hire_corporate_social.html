@@ -28,44 +28,55 @@
 </section>
 {% include 'partials/_alerts.html' %}
 <!-- Listing -->
-<section id="application" class="py-4">
+<section>
     <div class="container">
         <!-- <img class="img" src="{% static 'img/catering2.jpg' %}" alt=""> -->
+        <h4 class="text-center">Corporate and Social services</h4>
         <div class="row">
-
-            <div class="col-md-6">
-                <h4 class="text-center">Corporate and Social services</h4>
-                <div class="card p-3 text-center">
-                    <img class="img" src="{% static 'img/corporate.jpg' %}" alt="">
-                    <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                         of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                          but also the leap into electronic typesetting, remaining essentially unchanged. 
-                          It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                          and more recently with desktop publishing software like Aldus PageMaker including versions of 
-                          Lorem Ipsum.</p>
-                    <button class="btn" style="color: #fff; background-color:#008080;" data-toggle="modal" data-target="#corporate">Hire Service</button>
+            <div class="col-md-4">
+                <div class="card">
+                    <img style="width: 350px; height: auto;" src="{% static 'img/corporate.jpg' %}" alt="">
                 </div>
             </div>
-            <div class="col-md-6">
-
-                <h4 class="text-center">Hire equipments</h4>
-                <div class="card p-3 text-center">
-                    <img class="img" src="{% static 'img/catering.jpg' %}" alt="">
-                    <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                             of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                              but also the leap into electronic typesetting, remaining essentially unchanged. 
-                              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                              and more recently with desktop publishing software like Aldus PageMaker including versions of 
-                              Lorem Ipsum.</p>
-                    <button class="btn" style="color: #fff; background-color:#008080;" data-toggle="modal" data-target="#equipment">Hire Equipments</button>
-                </div>
+            <div class="col-md-8 text-center p-3">
+                <p class="text-justify">We provide end to end corporate events services all under one roof methodology.
+                    Corporate events are the B2B events like conferences .exhibitions. award giving . rallies. Teqm
+                    building.etc..we make you a guest at your own events by handling all the aspects from budgeting,
+                    theme,best suppliers, venue search and siting ,guest management and program creation
+                    We also provide end to end social events services like weddings, parties, baby showers, bridal and
+                    grooming showers , graduations parties, birthday party, family gatherings etc We handle the events
+                    from decor, receptions, transport and venue search and siting and the D-day overseeing g of the
+                    program. </p>
+                <button class="btn" style="color: #fff; background-color:#008080;" data-toggle="modal"
+                    data-target="#corporate">Hire Service</button>
             </div>
         </div>
     </div>
 </section>
-
+<div class="container">
+    <hr>
+</div>
+<section>
+    <div class="container">
+        <h4 class="text-center">Hire equipments</h4>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img style="width: 350px; height: auto;" src="{% static 'img/catering.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-md-8 p-4 text-center">
+                <p class="text-justify">With our vast , variety ,trendy and best quality equipment in our stores,we give
+                    you the latest and trendy tents, an array of decor and centrepiece, furniture, photography and
+                    videography, audio-visual and theme for both social and corporate events all for rental purposes.
+                    We make sure you get the best of the best value for your money. </p>
+                <button class="btn" style="color: #fff; background-color:#008080;" data-toggle="modal"
+                    data-target="#equipment">Hire Equipments</button>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
 <!-- Hire corporate -->
 <div class="modal fade" id="corporate" role="dialog">
     <div class="modal-dialog">
@@ -92,14 +103,14 @@
                         <input type="text" name="phone" class="form-control">
                     </div>
                     <div class="form-group">
-                            <label for="service" class="col-form-label">Service:</label><br>
-                            <select name="service">
-                                    <optgroup label="Service">
-                                      <option value="corporate">Corporate</option>
-                                      <option value="social">Social</option>
-                                    </optgroup>
-                                  </select>
-                        </div>
+                        <label for="service" class="col-form-label">Service:</label><br>
+                        <select name="service">
+                            <optgroup label="Service">
+                                <option value="corporate">Corporate</option>
+                                <option value="social">Social</option>
+                            </optgroup>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="message" class="col-form-label">Message:</label>
                         <textarea name="message" class="form-control"></textarea>
@@ -134,17 +145,18 @@
                     </div>
                     <div class="form-group">
                         <label for="phone" class="col-form-label">Phone:</label>
-                        <input type="tel" name="phone" pattern='^\+?\d{0,13}' title='Phone Number (Format: +99(99)9999-9999)' class="form-control" required>
+                        <input type="tel" name="phone" pattern='^\+?\d{0,13}'
+                            title='Phone Number (Format: +99(99)9999-9999)' class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="service" class="col-form-label">Equipment to be hired:</label><br>
                         <select name="service">
-                                <optgroup label="Equipments">
-                                  <option value="tents">Tents</option>
-                                  <option value="catering">Catering</option>
-                                  <option value="electronics">Electronics</option>
-                                </optgroup>
-                              </select>
+                            <optgroup label="Equipments">
+                                <option value="tents">Tents</option>
+                                <option value="catering">Catering</option>
+                                <option value="electronics">Electronics</option>
+                            </optgroup>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="message" class="col-form-label">Message:</label>

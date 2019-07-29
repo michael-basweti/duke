@@ -1,10 +1,58 @@
 {% block html %}
-<div class="card p-3 text-center">
-    <h2 class="text-success">Duke Events Notification</h2>
-    <p>Hi admin, {{full_name}} has applied for {{service}}. His contacts are as follows:</p>
-    <ul>
-      <li>Phone: {{phone}}</li>
-      <li>Email: {{email}}</li>
-    </ul>
-</div>
+
+<head style="box-sizing: border-box;">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" style="box-sizing: border-box;">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" style="box-sizing: border-box;">
+
+    <title style="box-sizing: border-box;">Converge</title>
+
+
+    <style style="box-sizing: border-box;">
+        @font-face {
+            font-family: 'DINPro';
+            src: url("https://firebasestorage.googleapis.com/v0/b/andelamrm.appspot.com/o/email_assets%2Ffonts%2FDINPro-Regular.woff?alt=media&token=8740b12d-b0d5-497a-8288-53fc5a6b432e");
+        }
+        * {
+            font-family: 'DINPro';
+        }
+    </style>
+</head>
+
+<body style="box-sizing: border-box;margin: 0;height:100%;font-family: 'DINPro', 'Roboto', sans-serif;font-size: 1rem;font-weight: 400;line-height: 1.5;color: #212529;text-align: left;background-color: #f4f8f9;min-width: 992px!important;">
+    <div class="container" style="box-sizing: border-box;height:100%;width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;min-width: 992px!important;padding:70px;">
+        <div id="email" style="box-sizing: border-box;height: 605px;width: 611px;background-color: #ffff;margin: auto;">
+            <div class="converge" style="box-sizing: border-box;padding-top: 24px;height: 23;width: 195px;color: #3359db;font-size: 18px;font-weight: 500;letter-spacing: 0.36px;line-height: 23px;margin: auto;">
+                <img src="https://i.imgur.com/6foV1gb.png" alt="" style="box-sizing: border-box;vertical-align: middle;border-style: none;page-break-inside: avoid;">
+                <span class="logo" style="box-sizing: border-box;display: inline-block;margin-left: 10px;">
+                    <h5 style="box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-family: inherit;font-weight: 500;line-height: 1.2;color: inherit;font-size: 1.25rem; font-family: 'DINPro', 'Roboto', sans-serif">DUKE</h5>
+                </span>
+            </div>
+            <div style="box-sizing: border-box;">
+                <hr style="box-sizing: content-box;height: 0;overflow: visible;margin-top: 1rem;margin-bottom: 1rem;border: 0;border-top: 1px solid rgba(0,0,0,.1);">
+            </div>
+            <div class="rectangle" style="box-sizing: border-box;height: 400px;width: 610px;text-align: center;">
+                <div style="box-sizing: border-box;">
+                    <h5 class="greeting" style="box-sizing: border-box;margin-top: 0;margin-bottom: .5rem;font-family: inherit;font-weight: 500;line-height: 31px;color: inherit;font-size: 24px;padding-top: 63px;">
+                        <Strong>Hello Admin!</strong>
+                    </h5>
+                </div>
+                <div class="rectangle-3" style="box-sizing: border-box;">
+                    <p class="invite" style="box-sizing: border-box;margin-top: 0;margin-bottom: 0;color: #6d6d6d;line-height: 21px;font-family: 'DINPro', 'Roboto', sans-serif !important;">
+                        {{full_name}} has applied for {{service}}.<br>
+                        The following are his details:
+                            <li>{{email}}</li>
+                            <li>{{phone}}</li>
+                        Regards,<br><strong>Duke Events</strong>
+                    </p>
+                </div>
+                <div style="box-sizing: border-box;">
+                    <a href=http://converge-staging.andela.com/> <button type=" button" class="btn btn-primary" style="box-sizing: border-box;border-radius: 4px;margin: 0;font-family: 'DINPro', 'Roboto', sans-serif;font-size: 1rem;overflow: visible;text-transform: none;-webkit-appearance: button;display: inline-block;font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;border: 1px solid transparent;padding: .375rem .75rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;color: #fff;background-color: #007bff;border-color: #007bff;height: 44px;width: 174px;">Login
+                        to view</button></a>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</body>
 {% endblock %}

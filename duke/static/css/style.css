@@ -272,3 +272,7 @@ img .img {
   width:100%;
   position:absolute;
 }
+.border{
+    border-style: 2px solid white;
+    height: 65%;
+}

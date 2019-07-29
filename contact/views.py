@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from templated_email import send_templated_mail
 from django.contrib import messages
 from .models import Contact
 
@@ -12,6 +13,17 @@ def contact(request):
         application = Contact(name=name,description=description,
                         email=email,phone=phone)
         application.save()
-        messages.success(request, "Your application has been submitted, you will be contacted shortly")
+        messages.success(request, "Your message has been submitted, you will be contacted shortly")
+        send_templated_mail(
+        template_name='welcome',
+        from_email=email,
+        recipient_list=['michaelbasweti@gmail.com'],
+        context={
+            
+            'full_name':name,
+            'email':email,
+            'phone':phone,
+        },
+        )
         return redirect('/contact')
 
