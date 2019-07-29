@@ -42,8 +42,8 @@ img {
   /* overflow: hidden; */
 }
 .img {
-  height: 300px;
-  width: 350px;
+  height: 320px;
+  width: auto;
   background: transparent;
   /* overflow: hidden; */
  }
