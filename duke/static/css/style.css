@@ -47,10 +47,7 @@ img {
   background: transparent;
   /* overflow: hidden; */
  }
-img .img {
-  height: auto;
-  width: 400px;
- }
+
  .btn-primary-outline {
   background-color: transparent;
   border-color: #ccc;
